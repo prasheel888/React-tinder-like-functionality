@@ -17,13 +17,30 @@
 .matchmaxcard__container {
   display: flex;
   justify-content: center;
+
   margin-top: 6vh;
 }
 .swipe {
   position: absolute;
 }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: black;
+}
 .result {
   position: absolute;
-  bottom: 20px;
-  margin-left: 600px;
+  bottom: 23px;
+  margin-left: 42vw;
+
+  margin-bottom: auto;
 }

@@ -86,6 +86,7 @@ function SignUp() {
     <div className="signupScreen">
       <form onSubmit={onSignInSubmit}>
         <div id="recaptcha-container"></div>
+
         <h1 className="header">Sign UP</h1>
         <input placeholder="Enter your Phone number" type="phone" />
 

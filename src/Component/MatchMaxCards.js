@@ -56,7 +56,11 @@ function MatchMaxCards() {
 
   return (
     <div className="card--match">
-      <Button onClick={handleSignOut}>Logout</Button>
+      <div className="header">
+        <h1 className="heading">Matchmax</h1>
+        <Button onClick={handleSignOut}>Logout</Button>
+      </div>
+
       <div className="matchmaxcard__container">
         {profile.map((person) => {
           return (
@@ -79,7 +83,6 @@ function MatchMaxCards() {
           );
         })}
       </div>
-
       <div className="result">
         {lastDirection ? (
           <h2 key={lastDirection} className="infotext">
