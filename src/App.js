@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import MatchMaxCards from "./Component/MatchMaxCards";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SignUp from "./Component/SignUP";
+import { useSelector } from "react-redux";
+import { selectUserNumber } from "./features/user/userSlice";
 
 function App() {
+  const user = useSelector(selectUserNumber);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        {!user ? (
+          <SignUp />
+        ) : (
+          <Switch>
+            <Route path="/Home">
+              <MatchMaxCards />
+            </Route>
+          </Switch>
+        )}
+      </Router>
     </div>
   );
 }
