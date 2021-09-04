@@ -11,8 +11,10 @@ import {
 
 import "./SignUp.css";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 function SignUp() {
+  const [number, setNumber] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -51,7 +53,7 @@ function SignUp() {
   let onSignInSubmit = (event) => {
     event.preventDefault();
     setUpRecaptcha();
-    const phoneNumber = "+919104126199";
+    const phoneNumber = number;
     const appVerifier = window.recaptchaVerifier;
     firebase
       .auth()
@@ -88,7 +90,11 @@ function SignUp() {
         <div id="recaptcha-container"></div>
 
         <h1 className="header">Sign UP</h1>
-        <input placeholder="Enter your Phone number" type="phone" />
+        <input
+          placeholder="Enter your Phone number"
+          type="phone"
+          onChange={(e) => setNumber(e.target.value)}
+        />
 
         <button type="submit"> Submit</button>
       </form>
